@@ -4,21 +4,21 @@ import {PrimaryButton} from '@sphereon/ui-components.ssi-react-native';
 import {Text, View} from 'react-native';
 import {ScreenRoutesEnum, StackParamList} from '../../../types';
 
-type Props = NativeStackScreenProps<StackParamList, ScreenRoutesEnum.WELCOME>;
+type Props = NativeStackScreenProps<StackParamList, ScreenRoutesEnum.ENTER_COUNTRY>;
 
-const SSIWelcomeScreen = (props: Props) => (
+const SSIEnterCountryScreen = (props: Props) => (
   <View>
-    <Text>Welcome to SSI</Text>
+    <Text>Enter Country</Text>
     <PrimaryButton
-      style={{height: 42, width: 300, marginTop: 60}}
+      style={{height: 42, width: 300}}
       caption="Next"
       backgroundColors={[buttonColors[100]]}
       captionColor={fontColors.light}
-      onPress={async () => {
-        await props.route.params.onNext();
+      onPress={() => {
+        props.route.params.onNext();
       }}
     />
   </View>
 );
 
-export default SSIWelcomeScreen;
+export default SSIEnterCountryScreen;
