@@ -37,6 +37,11 @@ const states: OnboardingStatesConfig = {
           target: OnboardingMachineStateType.enterCountry,
           actions: assign({currentStep: 1}),
         },
+        {
+          cond: ({currentStep}) => currentStep === 3,
+          target: OnboardingMachineStateType.acceptTermsAndPrivacy,
+          actions: assign({currentStep: 2}),
+        }
       ],
     },
   },
@@ -87,6 +92,10 @@ const states: OnboardingStatesConfig = {
     on: {
       READ_TERMS: OnboardingMachineStateType.readTermsAndPrivacy,
       PREVIOUS: OnboardingMachineStateType.enableBiometrics,
+      NEXT: {
+        target: OnboardingMachineStateType.showProgress,
+        actions: assign({currentStep: 3}),
+      }
     },
   },
   readTermsAndPrivacy: {
