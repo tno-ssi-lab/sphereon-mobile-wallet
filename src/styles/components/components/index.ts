@@ -26,6 +26,7 @@ export * from './SSIProgressBarIndicator';
 export * from './SSIProgressIndicator';
 export * from './SSIQRCustomMarker';
 export * from './SSIStatusBar';
+export * from './SSIStepperStepIndicator';
 export * from './SSISwipeDeleteButton';
 export * from './SSISwipeRowViewItem';
 export * from './SSITabView';
